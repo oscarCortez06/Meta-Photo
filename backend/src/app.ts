@@ -1,7 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+
 import photoRoutes from './routes/photoRoutes';
 
 const app = express();
+app.use(express.json());
+
+app.use(cors()); // Enable CORS for all origins
 app.use(express.json());
 
 app.use('/externalapi/photos', photoRoutes);

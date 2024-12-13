@@ -1,5 +1,6 @@
 import React from 'react';
 import { Photo } from '../models/common';
+import '../styles/PhotoList.css';
 
 interface PhotoListProps {
   photos: Photo[];

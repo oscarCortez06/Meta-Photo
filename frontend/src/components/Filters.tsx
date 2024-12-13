@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Filters } from '../models/common';
+import '../styles/Filters.css';
 
 interface FiltersProps {
   onApply: (filters: Filters) => void;
@@ -11,11 +12,11 @@ const FiltersComponent: React.FC<FiltersProps> = ({ onApply }) => {
   const [userEmail, setUserEmail] = useState<string>('');
 
   const handleApply = () => {
-    onApply({
-      title,
-      albumTitle,
-      userEmail,
-    });
+    const filters: Record<string, string> = {};
+    if (title) filters['title'] = title;
+    if (albumTitle) filters['album.title'] = albumTitle;
+    if (userEmail) filters['album.user.email'] = userEmail;
+    onApply(filters);
   };
 
   return (

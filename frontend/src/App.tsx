@@ -19,22 +19,22 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <h1>MetaPhoto App</h1>
-      <Filters onApply={handleApplyFilters} />
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {data && (
-        <>
-          <PhotoList photos={data.photos} />
-          <Pagination
-            total={data.total}
-            limit={filters.limit || 25}
-            offset={filters.offset || 0}
-            onPageChange={handlePageChange}
-          />
-        </>
-      )}
-    </div>
+    <h1>Photo Gallery</h1>
+    <Filters onApply={handleApplyFilters} />
+    {loading && <p>Loading...</p>}
+    {error && <p>Error: {error}</p>}
+    {data && (
+      <>
+        <PhotoList photos={data.photos} />
+        <Pagination
+          total={data.total}
+          limit={filters.limit || 25}
+          offset={filters.offset || 0}
+          onPageChange={handlePageChange}
+        />
+      </>
+    )}
+  </div>
   );
 };
 
