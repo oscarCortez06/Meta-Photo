@@ -1,0 +1,29 @@
+.photo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .photo-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo-item img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .photo-item h3 {
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .photo-item p {
+    color: #555;
+    font-size: 14px;
+  }
